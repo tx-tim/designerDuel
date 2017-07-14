@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-answertile',
@@ -6,16 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./answertile.component.scss']
 })
 export class AnswertileComponent implements OnInit {
+  @Input() answer;
+  @Input() num;
+  //@Output() onRevealed = new EventEmitter<boolean>();
 
-  constructor() { }
-
-  ngOnInit() {
+  isRevealed: boolean = false;
+  constructor() {
   }
 
-  rotate(e) {
-    console.log("rotate");
-    console.log(e.target.parentElement);
-    e.target.parentElement.style.backgroundColor="yellow";
-    e.target.parentElement.style.transform="rotateX(360deg)";
+  ngOnInit() {
+    this.num += 1;
+  }
+
+  toggleReveal(e) {
+    this.isRevealed = !this.isRevealed;
+    //this.onRevealed.emit(this.isRevealed)
+    console.log(e)
+    if(this.isRevealed) {
+      e.target.parentElement.classList.add('revealed');
+    } else {
+      e.target.parentElement.classList.remove('revealed');
+    }
+
   }
 }

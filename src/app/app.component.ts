@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ROUNDS } from './models';
+import {TeamComponent} from "./team/team.component";
 
 export class Hero {
   id: number;
@@ -29,5 +30,7 @@ const HEROES: Hero[] = [
 
 export class AppComponent {
   rounds = ROUNDS;
-  title = 'Family Feud: Usability Edition';
+  team1 = new TeamComponent();
+  team2 = new TeamComponent();
+  title = 'Designer Duel: Usability Edition';
 }

@@ -1,17 +1,26 @@
 :host {
   display: flex;
-  flex-basis: 100px;
+  flex-basis: 50px;
   flex-flow: row nowrap;
   justify-content: space-between;
-  transition: all 900ms;
+  transition: transform 900ms;
   background-color: red;
   padding: 10px;
   > div {
-    height: 80px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-grow: 1;
     &:first-child, &:last-child {
       flex-grow: 3;
-      background-color: blue;
+      background-color: yellow;
+    }
+  }
+
+  &.revealed {
+    >div:nth-child(2n){
+      display: none;
     }
   }
 }

@@ -9,13 +9,16 @@ export class TeamComponent implements OnInit {
   @Input() teamName: string;
   score: number = 0;
   addedPoints: number = 0;
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    if(!this.teamName) {
+      this.teamName = "team";
+    }
   }
 
   computeScore(points) {
-    console.log(points);
     this.score += this.addedPoints;
   }
 }

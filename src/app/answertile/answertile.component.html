@@ -1,3 +1,3 @@
-<div (click)="rotate($event)"></div>
-<div (click)="rotate($event)">{{answerNumber}}</div>
-<div (click)="rotate($event)"></div>
+<div (click)="toggleReveal($event)">{{isRevealed ? answer.text : ''}}</div>
+<div (click)="toggleReveal($event)">{{num}}</div>
+<div (click)="toggleReveal($event)">{{isRevealed ? answer.score : ''}}</div>

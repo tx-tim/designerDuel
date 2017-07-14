@@ -1,8 +1,34 @@
 :host {
-  max-width: 62.5em;
+  text-align: center;
+  >button {
+    position: absolute;
+    bottom: 10em;
+    &:first-child {
+      left: 1em;
+    }
+    &:last-child {
+      right: -1em;
+    }
+  }
+}
+.question {
+  font-size: 2.5rem;
+}
+.answer-section {
   background-color: lightgoldenrodyellow;
   border: 1px solid blue;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
+}
+
+img {
+  height: 700px;
+  width: auto;
+  display: block;
+  margin: auto;
+}
+app-answertile.revealed {
+  background-color: yellow;
+  transform: rotateX(360deg);
 }

@@ -2,4 +2,30 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  align-items: stretch;
+  height: 100vh;
+}
+
+%outside-section {
+  flex-basis: 25%;
+  display: flex;
+  align-items: center;
+}
+
+.team-namer {
+  position: absolute;
+  top: 1em;
+}
+section:nth-child(2n) {
+  flex-basis: 50%;
+}
+
+section:first-child {
+  @extend %outside-section;
+  justify-content: flex-end;
+}
+
+section:last-child {
+  @extend %outside-section;
+  justify-content: flex-start;
 }

@@ -12,18 +12,22 @@ export class GameboardComponent implements OnInit {
 
   rounds = ROUNDS;
   private sub: any;
-  private activeRound: any;
+  private activeRound: number;
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.activeRound=params.id;
     });
-    console.log(this.activeRound);
   }
 
-  advance(paramId) {
-    this.router.navigate(['/round', parseInt(paramId) + 1]);
+  // onRevealed(e) {
+  //   console.log(e)
+  //   return e;
+  // }
+
+  advance(paramId, operand) {
+    this.router.navigate(['/round', parseInt(paramId) + operand]);
   }
 
 }
