@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex-basis: 100px;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  transition: all 900ms;
+  background-color: red;
+  padding: 10px;
+  > div {
+    height: 80px;
+    flex-grow: 1;
+    &:first-child, &:last-child {
+      flex-grow: 3;
+      background-color: blue;
+    }
+  }
+}

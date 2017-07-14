@@ -1,0 +1,8 @@
+<div>
+  <h2>{{teamName}}</h2>
+  <label for="{{teamName}}Score">Score:</label>
+  <input id="{{teamName}}Score" [ngModel]="score" type="number" readonly>
+  <label for="{{teamName}}Addpoints">Add:</label>
+  <input id="{{teamName}}Addpoints" [(ngModel)]="addedPoints" (change)="computeScore(addedPoints)" type="number">
+  <!--<button (click)="computeScore()">Add Points</button>-->
+</div>
