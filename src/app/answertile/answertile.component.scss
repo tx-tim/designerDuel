@@ -19,8 +19,55 @@
   }
 
   &.revealed {
+    background-color: yellow;
+    transform: rotateX(360deg);
     >div:nth-child(2n){
       display: none;
     }
   }
 }
+//.scene {
+//  background-color: blue;
+//}
+//.cube {
+//  position: relative;
+//  width: 100%;
+//  height: 100px;
+//  transform-style: preserve-3d;
+//  transform: perspective(400px) translateZ(-50px);
+//}
+//.revealed.cube {
+//  animation: example 1s linear forwards;
+//}
+//
+//.side {
+//  background-color: red;
+//  position: absolute;
+//  width: 100%;
+//  height: 100px;
+//  transform-origin: 50% 50% -50px;
+//}
+//
+//
+//.back {
+//  background-color: yellow;
+//  transform: perspective(400px) rotateY(180deg);
+//}
+//.top {
+//  background-color: orange;
+//  transform: perspective(400px) rotateX(90deg);
+//}
+//.bottom {
+//  background-color: green;
+//  transform: perspective(400px) rotateX(-90deg);
+//}
+//.front {
+//  background-color: lime;
+//  transform: perspective(400px);
+//}
+//
+//
+//@keyframes example {
+//  0% { transform: translateZ(0px) rotateX(1deg); }
+//  100% { transform: translateZ(50px) rotateX(-90deg); }
+//}
