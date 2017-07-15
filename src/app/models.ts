@@ -15,7 +15,7 @@ const imageUrlPrefix = "../assets/images/rounds/";
 export const ROUNDS: Round[] = [
     {
         id: 0,
-        question: "What usability heuristics are represented by this image? (google's upload to to drive mobile app)",
+        question: "What usability heuristics are represented by this image?",
         imageUrl: imageUrlPrefix + "1.4.3.upload-file.png",
         answers: [
             {

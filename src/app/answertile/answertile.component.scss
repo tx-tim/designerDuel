@@ -1,10 +1,12 @@
+@import "../../colors";
+
 :host {
   display: flex;
   flex-basis: 50px;
   flex-flow: row nowrap;
   justify-content: space-between;
   transition: transform 900ms;
-  background-color: red;
+  background-color: $yellow;
   padding: 10px;
   > div {
     height: 40px;
@@ -14,15 +16,25 @@
     flex-grow: 1;
     &:first-child, &:last-child {
       flex-grow: 3;
-      background-color: yellow;
+      border: 2px solid $red;
     }
   }
 
   &.revealed {
-    background-color: yellow;
-    transform: rotateX(360deg);
-    >div:nth-child(2n){
-      display: none;
+    background-color: $darkgray;
+    transform: rotateX(180deg);
+    >div {
+      color: $yellow;
+      &:first-child {
+        flex-grow: 5;
+        border: none;
+      }
+      &:nth-child(2n) {
+        display: none;
+      }
+      &:first-child, &:last-child {
+        transform: rotateX(180deg);
+      }
     }
   }
 }

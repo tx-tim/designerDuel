@@ -1,5 +1,11 @@
+@import "../../colors";
+
 :host {
+  background: $orange url('../../assets/images/oval.svg') no-repeat;
+  background-position: 50% 150px;
   text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
   >button {
     position: absolute;
     bottom: 10em;
@@ -12,7 +18,15 @@
   }
 }
 .question {
-  font-size: 2.5rem;
+  position: absolute;
+  top: 0;
+  background-color: transparentize($darkgray, .2);
+  color: #fff;
+  left: 0;
+  width: 100vw;
+  font-size: 2rem;
+  margin:0;
+  z-index: 10;
 }
 .answer-section {
   background-color: lightgoldenrodyellow;
@@ -22,9 +36,13 @@
   justify-content: space-between;
 }
 
-img {
-  height: 700px;
-  width: auto;
-  display: block;
-  margin: auto;
+.image-section {
+  height: 400px;
+  img {
+    height:100%;
+    width: auto;
+    display: block;
+    margin: auto;
+  }
+
 }

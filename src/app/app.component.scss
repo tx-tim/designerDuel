@@ -1,4 +1,7 @@
+@import "../colors";
+
 :host {
+  background: $orange;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;

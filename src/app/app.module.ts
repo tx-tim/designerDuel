@@ -9,6 +9,7 @@ import { GameboardComponent } from './gameboard/gameboard.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { TeamComponent } from './team/team.component';
 import { AnswertileComponent } from './answertile/answertile.component';
+import { NavbuttonComponent } from './navbutton/navbutton.component';
 
 const routes:Routes = [
   {
@@ -23,7 +24,8 @@ const routes:Routes = [
     GameboardComponent,
     ScoreboardComponent,
     TeamComponent,
-    AnswertileComponent
+    AnswertileComponent,
+    NavbuttonComponent
   ],
   imports: [
     BrowserModule,

@@ -8,12 +8,15 @@
     </div>
       <app-team [teamName]="t1name"></app-team>
   </section>
-
-  <section>
-    <router-outlet></router-outlet>
+  <section *ngIf="!gameStarted">
     <h1>
       {{title}}
     </h1>
+    <p><a [routerLink]="['/round/0']" (click)="gameStarted = true">Start Game</a></p>
+  </section>
+
+  <section>
+    <router-outlet></router-outlet>
   </section>
 
   <section>

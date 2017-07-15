@@ -5,8 +5,13 @@
 <!--// question: string;-->
 <!--// imageUrl: string;-->
 <!--// answers: Answer[]-->
-<img src="{{rounds[activeRound].imageUrl}}">
-<p class="question">{{rounds[activeRound].question}}</p>
+<section class="image-section">
+    <img src="{{rounds[activeRound].imageUrl}}">
+    <p class="question">{{rounds[activeRound].question}}</p>
+</section>
+<!-- /.image-section -->
+
+
 <section class="answer-section">
     <app-answertile *ngFor="let answer of rounds[activeRound].answers; let i = index"
                     [answer]="answer"
