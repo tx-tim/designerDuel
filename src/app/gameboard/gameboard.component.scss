@@ -13,7 +13,7 @@
       left: 1em;
     }
     &:last-child {
-      right: -1em;
+      right: 0;
     }
   }
 }
@@ -30,7 +30,7 @@
 }
 .answer-section {
   background-color: lightgoldenrodyellow;
-  border: 1px solid blue;
+  border: 1px solid $darkgray;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
@@ -38,6 +38,7 @@
 
 .image-section {
   height: 400px;
+  z-index: 11;
   img {
     height:100%;
     width: auto;

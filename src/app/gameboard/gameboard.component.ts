@@ -30,4 +30,19 @@ export class GameboardComponent implements OnInit {
     this.router.navigate(['/round', parseInt(paramId) + operand]);
   }
 
+  enbiggenImage(evt) {
+    console.log("what is x")
+    console.log(evt.target.attributes.src);
+    evt.target.style.height = '900px';
+  }
+
+  toggleEmbiggenImage(e) {
+    //this.onRevealed.emit(this.isRevealed)
+    // console.log(e)
+    // if(this.isRevealed) {
+    //   e.target.classList.add('revealed');
+    // } else {
+    //   e.target.classList.remove('revealed');
+    // }
+  }
 }

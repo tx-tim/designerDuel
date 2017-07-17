@@ -2,11 +2,11 @@
   <!--<app-scoreboard></app-scoreboard>-->
 
   <section>
-    <div class="team-namer">
+    <div class="team-namer" *ngIf="!gameStarted">
       <label for="namer1">Team 1 Name</label>
       <input id="namer1" [(ngModel)]="t1name" type="text">
     </div>
-      <app-team [teamName]="t1name"></app-team>
+    <app-team [teamName]="t1name"></app-team>
   </section>
   <section *ngIf="!gameStarted">
     <h1>
@@ -20,13 +20,12 @@
   </section>
 
   <section>
-    <div class="team-namer">
+    <div *ngIf="!gameStarted" class="team-namer">
       <label for="namer2">Team 2 Name</label>
       <input id="namer2" [(ngModel)]="t2name" type="text">
     </div>
     <div>
       <app-team [teamName]="t2name"></app-team>
     </div>
-
   </section>
   <!--<app-gameboard></app-gameboard>-->

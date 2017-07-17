@@ -10,6 +10,7 @@ import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { TeamComponent } from './team/team.component';
 import { AnswertileComponent } from './answertile/answertile.component';
 import { NavbuttonComponent } from './navbutton/navbutton.component';
+import { DdImageComponent } from './dd-image/dd-image.component';
 
 const routes:Routes = [
   {
@@ -25,7 +26,8 @@ const routes:Routes = [
     ScoreboardComponent,
     TeamComponent,
     AnswertileComponent,
-    NavbuttonComponent
+    NavbuttonComponent,
+    DdImageComponent
   ],
   imports: [
     BrowserModule,

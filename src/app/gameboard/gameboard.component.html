@@ -1,12 +1,7 @@
 <button (click)="advance(activeRound, -1)">back</button>
-<button (click)="advance(activeRound, 1)">next</button>
-
-<!--// id: number;-->
-<!--// question: string;-->
-<!--// imageUrl: string;-->
-<!--// answers: Answer[]-->
 <section class="image-section">
-    <img src="{{rounds[activeRound].imageUrl}}">
+    <app-dd-image [imgsrc]="rounds[activeRound].imageUrl"></app-dd-image>
+    <!--<img (click)="enbiggenImage($event)" src="{{rounds[activeRound].imageUrl}}">-->
     <p class="question">{{rounds[activeRound].question}}</p>
 </section>
 <!-- /.image-section -->
@@ -18,3 +13,4 @@
                     [num]="i"></app-answertile>
 
 </section>
+<button (click)="advance(activeRound, 1)">next</button>

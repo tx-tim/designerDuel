@@ -9,7 +9,6 @@ export class AnswertileComponent implements OnInit {
   @Input() answer;
   @Input() num;
   //@Output() onRevealed = new EventEmitter<boolean>();
-
   isRevealed: boolean = false;
   constructor() {
   }
@@ -21,12 +20,10 @@ export class AnswertileComponent implements OnInit {
   toggleReveal(e) {
     this.isRevealed = !this.isRevealed;
     //this.onRevealed.emit(this.isRevealed)
-    console.log(e)
     if(this.isRevealed) {
       e.target.parentElement.classList.add('revealed');
     } else {
       e.target.parentElement.classList.remove('revealed');
     }
-
   }
 }
