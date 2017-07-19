@@ -1,29 +1,28 @@
-<!--The content below is only a placeholder and can be replaced.-->
-  <!--<app-scoreboard></app-scoreboard>-->
-  <section>
-    <div class="team-namer" *ngIf="!gameStarted">
-      <label for="namer1">Team 1 Name</label>
-      <input id="namer1" [(ngModel)]="t1name" type="text">
-    </div>
-    <app-team [teamName]="t1name"></app-team>
-  </section>
-  <section *ngIf="!gameStarted">
+  <!--<section class="outside-section">-->
+    <!--<div class="team-namer" *ngIf="!gameStarted">-->
+      <!--<label for="namer1">Team 1 Name</label>-->
+      <!--<input id="namer1" [(ngModel)]="t1name" type="text">-->
+    <!--</div>-->
+
+  <!--</section>-->
+  <section class="title-screen" *ngIf="!gameStarted">
     <h1>
       {{title}}
     </h1>
-    <p><a [routerLink]="['/round/0']" (click)="gameStarted = true">Start Game</a></p>
+    <p><a class="link-button"[routerLink]="['/round/0']" (click)="gameStarted = true">Start Game</a></p>
   </section>
 
-  <section>
+  <section class="gameboard-section">
     <router-outlet></router-outlet>
   </section>
 
-  <section>
-    <div *ngIf="!gameStarted" class="team-namer">
-      <label for="namer2">Team 2 Name</label>
-      <input id="namer2" [(ngModel)]="t2name" type="text">
-    </div>
-    <div>
-      <app-team [teamName]="t2name"></app-team>
-    </div>
-  </section>
+  <!--<section class="outside-section">-->
+    <!--<div *ngIf="!gameStarted" class="team-namer">-->
+      <!--<label for="namer2">Team 2 Name</label>-->
+      <!--<input id="namer2" [(ngModel)]="t2name" type="text">-->
+    <!--</div>-->
+    <!--<div>-->
+   <!--<app-team [teamName]="t1name" [triggerKey]="49"></app-team>-->
+   <!--<app-team [teamName]="t2name" [triggerKey]="50"></app-team>-->
+    <!--</div>-->
+  <!--</section>-->

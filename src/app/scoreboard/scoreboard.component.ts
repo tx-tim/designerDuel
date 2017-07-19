@@ -7,8 +7,7 @@ import {TeamComponent} from "../team/team.component";
   styleUrls: ['./scoreboard.component.scss']
 })
 export class ScoreboardComponent implements OnInit {
-  team1 = new TeamComponent();
-  team2 = new TeamComponent();
+
   constructor() {
     // addEventListener('keypress', function(e) {
     //   console.log(e);

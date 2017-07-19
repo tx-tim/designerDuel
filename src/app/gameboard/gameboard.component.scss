@@ -1,14 +1,18 @@
-@import "../../colors";
+@import "../../assets/colors";
 
+$top-offset: 2rem;
 :host {
-  background: $darkgray url('../../assets/images/ff-back.jpg') no-repeat;
-  background-position: 50% 150px;
-  text-align: center;
+  background: #000;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row wrap;
+  flex-basis: 100%;
+  justify-content: center;
+  position: relative;
+  padding-top: $top-offset*2;
   app-navbutton {
     position: absolute;
     bottom: 10em;
+    z-index: 12;
     &:first-of-type {
       left: 1em;
     }
@@ -17,27 +21,22 @@
     }
   }
 }
-.question {
-  position: absolute;
-  top: 0;
-  background-color: transparentize($darkgray, .2);
-  color: #fff;
-  left: 0;
-  width: 100vw;
-  font-size: 2rem;
-  margin:0;
-  z-index: 10;
-}
-.answer-section {
-  background-color: lightgoldenrodyellow;
-  border: 1px solid $darkgray;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-between;
-}
 
+.answer-section {
+  background: $darkgray url('../../assets/images/ff-back.jpg') no-repeat;
+  background-size: contain;
+  width: 700px;
+  height: 525px;
+  position: relative;
+}
+.inner-answers-section {
+  width: 500px;
+  margin: auto;
+  position: relative;
+  top: 105px;
+}
 .image-section {
-  height: 400px;
+  width:30%;
   z-index: 11;
   img {
     height:100%;
@@ -45,5 +44,38 @@
     display: block;
     margin: auto;
   }
+}
 
+.team-section {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+
+}
+
+app-team:first-of-type {
+  position: absolute;
+  left: 35px;
+  bottom: 75px;
+}
+app-team:last-of-type {
+  position: absolute;
+  left: 525px;
+  bottom: 75px;
+}
+
+.question {
+  position: absolute;
+  top: 10px;
+  background-color: transparentize($darkgray, .2);
+  color: $yellow;
+  left: 0;
+  width: 100vw;
+  font-family: eggcrateregular, Optimist, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.2rem;
+  margin:0;
+  z-index: 10;
 }

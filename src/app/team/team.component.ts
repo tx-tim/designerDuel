@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, HostListener} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-team',
@@ -7,14 +8,26 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TeamComponent implements OnInit {
   @Input() teamName: string;
+  @Input() triggerKey: number;
   score: number = 0;
   addedPoints: number = 0;
-  constructor() {
+  bellAudio:any = new Audio();
+
+  constructor(private route: ActivatedRoute) {
+    this.bellAudio.src = "../assets/sounds/ff-bell.wav";
+    this.bellAudio.load();
   }
 
   ngOnInit() {
     if(!this.teamName) {
-      this.teamName = "team";
+      this.teamName = "team" + this.triggerKey;
+    }
+  }
+
+  @HostListener('document:keypress', ['$event'])
+  onKeyPress(event: KeyboardEvent) {
+    if(event.keyCode === this.triggerKey) {
+      this.bellAudio.play();
     }
   }
 

@@ -1,7 +1,14 @@
+@import "../../assets/colors";
 :host {
+  color: $yellow;
+  font-family: eggcrateregular, Optimist, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
   >div {
     width: 125px;
-
+  }
+  &.active {
+    color: red;
   }
 }
 .score {

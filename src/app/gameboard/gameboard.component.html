@@ -1,15 +1,26 @@
 <app-navbutton [text]="'Back'" [param]="-1"></app-navbutton>
 <section class="image-section">
     <app-dd-image [imgsrc]="rounds[activeRound].imageUrl"></app-dd-image>
-    <!--<img (click)="enbiggenImage($event)" src="{{rounds[activeRound].imageUrl}}">-->
     <p class="question">{{rounds[activeRound].question}}</p>
 </section>
 
 
 <section class="answer-section">
-    <app-answertile *ngFor="let answer of rounds[activeRound].answers; let i = index"
-                    [answer]="answer"
-                    [num]="i"></app-answertile>
+    <div class="inner-answers-section">
+        <app-answertile *ngFor="let answer of rounds[activeRound].answers; let i = index"
+                        [answer]="answer"
+                        [num]="i"
+                        (onRevealed)="onRevealed($event)"></app-answertile>
 
+    </div>
+    <app-team [ngClass]="{'active':activeTeam === 49}" [teamName]="t1name" [triggerKey]="49"></app-team>
+    <app-team [ngClass]="{'active':activeTeam === 50}" [teamName]="t2name" [triggerKey]="50"></app-team>
 </section>
+<section class="team-section">
+    <!--<app-team [ngClass]="{'active':activeTeam === 49}" [teamName]="t1name" [triggerKey]="49"></app-team>-->
+    <!--<app-team [ngClass]="{'active':activeTeam === 50}" [teamName]="t2name" [triggerKey]="50"></app-team>-->
+</section>
+
 <app-navbutton [text]="'Next'" [param]="1"></app-navbutton>
+
+
