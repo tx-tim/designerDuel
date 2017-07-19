@@ -1,10 +1,9 @@
-<button (click)="advance(activeRound, -1)">back</button>
+<app-navbutton [text]="'Back'" [param]="-1"></app-navbutton>
 <section class="image-section">
     <app-dd-image [imgsrc]="rounds[activeRound].imageUrl"></app-dd-image>
     <!--<img (click)="enbiggenImage($event)" src="{{rounds[activeRound].imageUrl}}">-->
     <p class="question">{{rounds[activeRound].question}}</p>
 </section>
-<!-- /.image-section -->
 
 
 <section class="answer-section">
@@ -13,4 +12,4 @@
                     [num]="i"></app-answertile>
 
 </section>
-<button (click)="advance(activeRound, 1)">next</button>
+<app-navbutton [text]="'Next'" [param]="1"></app-navbutton>

@@ -1,4 +1,4 @@
-import {Component, OnInit, AfterContentInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
@@ -29,7 +29,5 @@ export class AppComponent implements OnInit {
     if(/round/.test(window.location.href)) {
       this.gameStarted = true;
     }
-
-
   }
 }

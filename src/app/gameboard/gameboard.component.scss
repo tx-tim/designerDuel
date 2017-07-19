@@ -1,18 +1,18 @@
 @import "../../colors";
 
 :host {
-  background: $orange url('../../assets/images/oval.svg') no-repeat;
+  background: $darkgray url('../../assets/images/ff-back.jpg') no-repeat;
   background-position: 50% 150px;
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
-  >button {
+  app-navbutton {
     position: absolute;
     bottom: 10em;
-    &:first-child {
+    &:first-of-type {
       left: 1em;
     }
-    &:last-child {
+    &:last-of-type{
       right: 0;
     }
   }

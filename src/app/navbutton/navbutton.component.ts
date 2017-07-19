@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {ActivatedRoute, Router, ParamMap} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
@@ -11,21 +11,19 @@ export class NavbuttonComponent implements OnInit {
 
   private sub: any;
   activeRound: number;
+
+  @Input() text:string;
+  @Input() param:number;
+
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      this.activeRound=params.id;
-    });
-    // this.route.paramMap.subscribe(params => {
-    //   console.log("params")
-    //   console.log(params.get('id'));
-    //   this.activeRound= +params.get('id');
-    // })
+    this.route.paramMap.subscribe(params => {
+      this.activeRound= +params.get('id');
+    })
   }
 
-  advance(paramId, operand) {
-    console.log(this.activeRound)
-    //this.router.navigate(['/round', parseInt(paramId) + operand]);
+  advance(operand) {
+    this.router.navigate(['/round', this.activeRound + operand]);
   }
 }
