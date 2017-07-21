@@ -1,5 +1,6 @@
 img {
-  height: 325px;
+  max-height: 325px;
+  max-width: 400px;
   z-index: 10;
   -webkit-transition: height 500ms;
   -moz-transition: height 500ms;
@@ -7,6 +8,9 @@ img {
   -o-transition: height 500ms;
   transition: height 500ms;
   &.large {
-    height: 900px;
+    max-width: inherit;
+    max-height: inherit;
+    height: 600px !important;
+
   }
 }
