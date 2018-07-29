@@ -26,23 +26,20 @@ export class GameboardComponent implements OnInit {
     this.blipAudio.load();
   }
 
-
-  @HostListener('document:keypress', ['$event'])
-  onKeyPress(event:KeyboardEvent) {
-    if (event.keyCode === 32) {
-      this.strikeAudio.play();
-      this.activeTeam = null;
-    }
-  }
-
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.activeRound = +params.get('id');
       this.activeTeam = null;
-      this.keysub = Observable.fromEvent(window, "keypress").first();
+      this.keysub = Observable.fromEvent(document, "keypress").map(e => e);
       this.keysub$ = this.keysub.subscribe(e => {
         if (e.keyCode === 49 || e.keyCode === 50) {
-          this.activeTeam = e.keyCode;
+          if(!this.activeTeam) {
+            this.activeTeam = e.keyCode;
+          }
+        }
+        if (e.keyCode === 32) {
+          this.strikeAudio.play();
+          this.activeTeam = null;
         }
       });
     });
@@ -52,12 +49,6 @@ export class GameboardComponent implements OnInit {
     if (isrevealed) {
       this.blipAudio.play();
       this.activeTeam = null;
-      this.keysub$.unsubscribe();
-      this.keysub$ = this.keysub.subscribe(e => {
-        if (e.keyCode === 49 || e.keyCode === 50) {
-          this.activeTeam = e.keyCode;
-        }
-      });
     }
   }
 }

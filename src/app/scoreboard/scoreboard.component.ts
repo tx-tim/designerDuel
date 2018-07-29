@@ -9,9 +9,6 @@ import {TeamComponent} from "../team/team.component";
 export class ScoreboardComponent implements OnInit {
 
   constructor() {
-    // addEventListener('keypress', function(e) {
-    //   console.log(e);
-    // });
   }
   
   ngOnInit() {

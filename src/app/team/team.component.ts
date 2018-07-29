@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, HostListener} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+//import { GameboardComponent } from '../gameboard/gameboard.component.spec';
 
 @Component({
   selector: 'app-team',
@@ -27,6 +28,7 @@ export class TeamComponent implements OnInit {
   @HostListener('document:keypress', ['$event'])
   onKeyPress(event: KeyboardEvent) {
     if(event.keyCode === this.triggerKey) {
+      //and active team is not null!!! doh!
       this.bellAudio.play();
     }
   }
